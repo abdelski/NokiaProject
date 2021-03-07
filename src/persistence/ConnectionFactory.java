@@ -7,11 +7,9 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 
     private static Connection conn;
-    
-    private ConnectionFactory(){}
-    
-    public static Connection getConnection() throws SQLException{
-        if (conn == null){
+
+    public static Connection getConnection() throws SQLException {
+        if (conn == null) {
             String dbURL = "jdbc:sqlite:MovieDB";
             conn = DriverManager.getConnection(dbURL);
         }

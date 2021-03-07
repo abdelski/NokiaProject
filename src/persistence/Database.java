@@ -12,7 +12,7 @@ public class Database {
 
     PreparedStatement deleteStatement;
 
-    private Connection connection;
+    private final Connection connection;
 
     public Database() throws SQLException {
         Connection c = null;
@@ -64,8 +64,8 @@ public class Database {
 
     public ArrayList<Movie> movieList() throws SQLException {
 
-        ArrayList<Movie> data = new ArrayList<Movie>();
-        ArrayList<String> actors = new ArrayList<String>();
+        ArrayList<Movie> data = new ArrayList<>();
+        ArrayList<String> actors = new ArrayList<>();
 
         String queryMovie = "SELECT * FROM MOVIES";
         Statement stmtMovie = connection.createStatement();
